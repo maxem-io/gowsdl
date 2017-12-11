@@ -77,10 +77,10 @@ func TestAttributeRef(t *testing.T) {
 	}
 
 	expected := `type ResponseStatus struct {
-	XMLName	xml.Name	` + "`" + `xml:"http://www.mnb.hu/webservices/ ResponseStatus"` + "`" + `
+	XMLName	xml.Name
 
 	Status	[]struct {
-		Value	string
+		Value	string	` + "`" + `xml:",chardata"` + "`" + `
 
 		Code	string	` + "`" + `xml:"code,attr,omitempty"` + "`" + `
 	}	` + "`" + `xml:"status,omitempty"` + "`" + `

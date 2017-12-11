@@ -38,7 +38,7 @@ var typesTmpl = `
 {{end}}
 
 {{define "SimpleContent"}}
-	Value {{toGoType .Extension.Base}}{{template "Attributes" .Extension.Attributes}}
+	Value {{toGoType .Extension.Base}} ` + "`" + `xml:",chardata"` + "`" + ` {{template "Attributes" .Extension.Attributes}}
 {{end}}
 
 {{define "ComplexTypeInline"}}
@@ -112,7 +112,7 @@ var typesTmpl = `
 		{{/* ComplexTypeGlobal */}}
 		{{$name := replaceReservedWords .Name | makePublic}}
 		type {{$name}} struct {
-			XMLName xml.Name ` + "`xml:\"{{$targetNamespace}} {{.Name}}\"`" + `
+			XMLName xml.Name
 			{{if ne .ComplexContent.Extension.Base ""}}
 				{{template "ComplexContent" .ComplexContent}}
 			{{else if ne .SimpleContent.Extension.Base ""}}
