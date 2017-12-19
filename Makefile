@@ -1,4 +1,4 @@
-GHACCOUNT := hooklift
+GHACCOUNT := maxem-io
 NAME := gowsdl
 VERSION := v0.2.1
 

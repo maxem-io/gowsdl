@@ -54,11 +54,11 @@ import (
 	"log"
 	"os"
 
-	gen "github.com/hooklift/gowsdl"
+	gen "github.com/maxem-io/gowsdl"
 )
 
 // Version is initialized in compilation time by go build.
-var Version string
+var Version string = "maxem-io/gowsdl 0.0.1"
 
 // Name is initialized in compilation time by go build.
 var Name string
